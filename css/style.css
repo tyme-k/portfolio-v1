@@ -1,0 +1,220 @@
+@import url('satoshi.css');
+
+/* Global Variables */
+:root {
+  /* Text Colors */
+  --text-primary: #ffffff;
+  --text-secondary: #bbbbbb;
+  --text-heading: #ffffff;
+
+  /* Background Colors */
+  --bg-primary: #1e1e1e;
+  --bg-secondary: #333333;
+
+  /* Border Colors */
+  --border-accent: #ffffff;
+}
+
+/* Light Mode Overrides */
+body.light {
+  --text-primary: #1e1e1e;
+  --text-secondary: #444444;
+  --text-heading: #1e1e1e;
+
+  --bg-primary: #e0e0dc;
+  --bg-secondary: #f0f0f0;
+
+  --border-accent: #1e1e1e;
+}
+
+/* General Styling */
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Push footer to the bottom */
+  min-height: 100vh; /* Ensure the content fills the full height */
+  margin: 0;
+  font-family: 'Satoshi-Variable', sans-serif;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+#theme-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon {
+  width: 32px;
+  height: 32px;
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+/* Navbar */
+.logo {
+  font-size: 2rem; /* Change this value to make it larger or smaller */
+  color: var(--text-primary);
+  text-decoration: none; /* Remove underline */
+  cursor: pointer; /* Show pointer to indicate it's clickable */
+}
+
+.logo:hover {
+  color: var(--text-secondary); /* Optional hover effect */
+  transition: color 0.3s ease;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: var(--bg-primary);
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem; /* Increased spacing for better readability */
+}
+
+.nav-links li {
+  display: inline;
+}
+
+.nav-links a {
+  font-size: 2rem; /* Larger font for navbar links */
+  color: var(--text-primary);
+}
+
+.nav-links a:hover {
+  color: var(--text-secondary); /* Highlight color for hover effect */
+  transition: color 0.3s ease;
+}
+
+/* Main Section */
+.main {
+  flex: 1; /* Fill the remaining space between the header and footer */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center horizontally */
+  justify-content: flex-start; /* Center vertically */
+  padding: 1rem;
+  text-align: center;
+}
+
+.intro {
+  max-width: 100%;
+  text-align: center;
+}
+
+.typewriter-container {
+  position: relative;
+  display: inline-block;
+}
+
+.intro h1 {
+  font-size: 10rem; /* Reduced size for better fit */
+  color: var(--text-heading);
+  white-space: nowrap; /* Prevent text from wrapping to the next line */
+  border-right: 5px solid var(--border-accent);
+  width: 100%;
+  overflow: hidden;
+  animation: 
+    typing 3.5s,
+    cursor 0.5s step-end infinite alternate;
+  animation-fill-mode: forwards;
+}
+
+.intro p {
+  font-size: 2rem; /* Reduced text size for better fit */
+  margin: 1rem 0;
+  color: var(--text-secondary);
+  text-align: center;
+}
+
+/* Footer */
+.footer {
+  flex: 0 0 auto; /* Prevent footer from growing */
+  text-align: center;
+  padding: 0.5rem 0; /* Reduce padding to save space */
+  font-size: 1.1rem; /* Slightly smaller footer text */
+  color: var(--text-secondary);
+}
+
+/* Animations */
+@keyframes cursor {
+  50% {
+    border-color: transparent;
+  }
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+}
+
+.cursor-disappear {
+  animation: none !important; /* Stops all animations */
+  border-right: none !important; /* Removes the cursor */
+}
+
+/* About Section */
+.about-section {
+  padding-left: 0rem;
+  padding-right: 0rem;
+  margin-left: -2rem;
+  text-align: center;
+  color: var(--text-primary); /* Use global color variable */
+}
+
+.about-section h2 {
+  margin-top: 0; /* Center vertically */
+  position: relative;
+  font-size: 5rem;
+  margin-bottom: 2rem;
+}
+
+.about-section p {
+  font-size: 2rem;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+  margin-left: -2rem;
+  text-align: left;
+  width: 75%;
+  color: var(--text-secondary)
+}
+
+.about-list {
+  list-style-type: disc; /* Adds standard bullet points */
+  padding-left: 0rem; /* Indent the list slightly */
+  text-align: left; /* Align list items to the left */
+  margin: 2.5rem; /* Center the list with vertical spacing */
+  max-width: 800px; /* Restrict the width for better readability */
+}
+
+.about-list li {
+  font-size: 2em; /* Adjust text size */
+  line-height: 1.8; /* Add spacing between lines */
+  margin-bottom: 1.5rem; /* Add space between list items */
+  text-align: left;
+  color: var(--text-secondary); /* Match text color with the theme */
+}
+
+
+/* Active Navbar Link */
+.nav-links a.active {
+  color: var(--border-accent); /* Highlight the active link */
+  font-weight: bold;
+}

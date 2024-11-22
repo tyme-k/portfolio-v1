@@ -1,0 +1,90 @@
+/**
+* @license
+*
+* Font Family: Alpino
+* Designed by: Alisa Nowak, Jérémie Hornus
+* URL: https://www.fontshare.com/fonts/alpino
+* © 2024 Indian Type Foundry
+*
+* Alpino Thin 
+* Alpino Light 
+* Alpino Regular 
+* Alpino Medium 
+* Alpino Bold 
+* Alpino Black 
+* Alpino Variable (Variable font)
+
+*
+*/
+@font-face {
+  font-family: 'Alpino-Thin';
+  src: url('../fonts/alpino/Alpino-Thin.woff2') format('woff2'),
+       url('../fonts/alpino/Alpino-Thin.woff') format('woff'),
+       url('../fonts/alpino/Alpino-Thin.ttf') format('truetype');
+  font-weight: 100;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Alpino-Light';
+  src: url('../fonts/alpino/Alpino-Light.woff2') format('woff2'),
+       url('../fonts/alpino/Alpino-Light.woff') format('woff'),
+       url('../fonts/alpino/Alpino-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Alpino-Regular';
+  src: url('../fonts/alpino/Alpino-Regular.woff2') format('woff2'),
+       url('../fonts/alpino/Alpino-Regular.woff') format('woff'),
+       url('../fonts/alpino/Alpino-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Alpino-Medium';
+  src: url('../fonts/alpino/Alpino-Medium.woff2') format('woff2'),
+       url('../fonts/alpino/Alpino-Medium.woff') format('woff'),
+       url('../fonts/alpino/Alpino-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Alpino-Bold';
+  src: url('../fonts/alpino/Alpino-Bold.woff2') format('woff2'),
+       url('../fonts/alpino/Alpino-Bold.woff') format('woff'),
+       url('../fonts/alpino/Alpino-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Alpino-Black';
+  src: url('../fonts/alpino/Alpino-Black.woff2') format('woff2'),
+       url('../fonts/alpino/Alpino-Black.woff') format('woff'),
+       url('../fonts/alpino/Alpino-Black.ttf') format('truetype');
+  font-weight: 900;
+  font-display: swap;
+  font-style: normal;
+}
+/**
+* This is a variable font
+* You can control variable axes as shown below:
+* font-variation-settings: wght 900.0;
+*
+* available axes:
+'wght' (range from 100.0 to 900.0
+*/
+@font-face {
+  font-family: 'Alpino-Variable';
+  src: url('../fonts/alpino/Alpino-Variable.woff2') format('woff2'),
+       url('../fonts/alpino/Alpino-Variable.woff') format('woff'),
+       url('../fonts/alpino/Alpino-Variable.ttf') format('truetype');
+  font-weight: 100 900;
+  font-display: swap;
+  font-style: normal;
+}
+
