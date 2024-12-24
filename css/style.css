@@ -1,220 +1,448 @@
 @import url('satoshi.css');
 
-/* Global Variables */
+html {
+    scroll-behavior: smooth; /* Enables smooth scrolling */
+}
+
+section {
+    scroll-margin-top: 80px; /* Adjust for the navbar height */
+    scroll-padding-top: 80px; 
+}
+
 :root {
-  /* Text Colors */
-  --text-primary: #ffffff;
-  --text-secondary: #bbbbbb;
-  --text-heading: #ffffff;
-
-  /* Background Colors */
-  --bg-primary: #1e1e1e;
-  --bg-secondary: #333333;
-
-  /* Border Colors */
-  --border-accent: #ffffff;
+    --text-primary: #1e1e1e;
+    /* --text-secondary: #444444; */
+    --text-secondary: #8d8f94;
+    --text-third: #a1a7ab;
+    --bg-primary: #ffffff;
+    --bg-secondary: #f0f0f0;
+    --bg-transparent: rgba(255, 255, 255, 0.8);
+    --border-accent: #1e1e1e;
 }
 
-/* Light Mode Overrides */
-body.light {
-  --text-primary: #1e1e1e;
-  --text-secondary: #444444;
-  --text-heading: #1e1e1e;
+body.dark {
+    /* Dark Mode Colors */
+    --text-primary: #ffffff;
+    /* --text-secondary: #bbbbbb; */
+    --text-secondary: #8d8f94;
+    --text-third: #a1a7ab;
+    --bg-primary: #161513;
+    --bg-secondary: #242426;
+    --bg-transparent: #161513;
+    --border-accent: #ffffff;
+  }
+  
 
-  --bg-primary: #e0e0dc;
-  --bg-secondary: #f0f0f0;
-
-  --border-accent: #1e1e1e;
-}
-
-/* General Styling */
 body {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between; /* Push footer to the bottom */
-  min-height: 100vh; /* Ensure the content fills the full height */
-  margin: 0;
-  font-family: 'Satoshi-Variable', sans-serif;
-  background-color: var(--bg-primary);
-  color: var(--text-primary);
-}
-
-a {
-  text-decoration: none;
-  color: inherit;
-}
-
-#theme-toggle {
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 0.5rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.icon {
-  width: 32px;
-  height: 32px;
-  display: inline-block;
-  transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-family: 'Satoshi-Variable', sans-serif;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    transition: background-color 0.5s ease, color 0.5s ease;
 }
 
 /* Navbar */
-.logo {
-  font-size: 2rem; /* Change this value to make it larger or smaller */
-  color: var(--text-primary);
-  text-decoration: none; /* Remove underline */
-  cursor: pointer; /* Show pointer to indicate it's clickable */
-}
-
-.logo:hover {
-  color: var(--text-secondary); /* Optional hover effect */
-  transition: color 0.3s ease;
-}
-
 .navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 2rem;
-  background-color: var(--bg-primary);
+    position: fixed;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    top: 0;
+    left: 0;
+    padding: 1rem 2rem;
+    box-sizing: border-box;
+    font-size: 1.25rem;
+    z-index: 1000;
+    background-color: var(--bg-transparent);
+    backdrop-filter: blur(10px); /* Blur effect */
+    -webkit-backdrop-filter: blur(10px); /* Safari support */
+    transition: background-color 0.5s ease, color 0.5s ease;
 }
 
-.nav-links {
-  list-style: none;
-  display: flex;
-  gap: 1.5rem; /* Increased spacing for better readability */
+.navbar-menu {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+    z-index: 10;
 }
 
-.nav-links li {
-  display: inline;
+.navbar-menu a {
+    text-decoration: none;
+    color: var(--text-secondary);
+    transition: color 0.3s ease;
 }
 
-.nav-links a {
-  font-size: 2rem; /* Larger font for navbar links */
-  color: var(--text-primary);
+.nav-link:hover {
+    color: #5A9ECF;
+    /* color: #574bdb; */
+    cursor: pointer;
 }
 
-.nav-links a:hover {
-  color: var(--text-secondary); /* Highlight color for hover effect */
-  transition: color 0.3s ease;
+.nav-link.active {
+    color: #5A9ECF;
+    /* color: #574bdb; */
+    font-family: 'Satoshi-Bold', sans-serif;
+    /* text-decoration: underline; */
+  }
+
+.navbar-logo {
+    text-decoration: none;
+    color: var(--text-secondary);
+    z-index: 1000;
 }
 
-/* Main Section */
-.main {
-  flex: 1; /* Fill the remaining space between the header and footer */
-  display: flex;
-  flex-direction: column;
-  align-items: center; /* Center horizontally */
-  justify-content: flex-start; /* Center vertically */
-  padding: 1rem;
-  text-align: center;
+.navbar-logo a:hover {
+    color: #5A9ECF;
+    cursor: pointer;
 }
 
-.intro {
-  max-width: 100%;
-  text-align: center;
+.navbar-logo a:active {
+    color: #5A9ECF;
+    font-family: 'Satoshi-Bold', sans-serif;
+}
+
+#theme-toggle {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    background-color: transparent;
+    border: 2px solid var(--link-color);
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  #theme-toggle:hover {
+    background-color: var(--link-color);
+    color: #ffffff;
+}
+
+.home-sec {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    text-align: center;
+    margin-bottom: 10rem;
+}
+
+.home-sec h1 {
+    margin-top: 14rem;
+    font-size: 9rem;
+    color: var(--text-heading);
+    white-space: nowrap; /* Prevent text wrapping */
+    border-right: 5px solid var(--border-accent);
+    width: 100%;
+    overflow: hidden;
+    animation: typing 3.5s, cursor 0.5s step-end infinite alternate;
+    animation-fill-mode: forwards;
+    font-size: 9rem;
+    color: var(--text-heading);
 }
 
 .typewriter-container {
-  position: relative;
-  display: inline-block;
-}
+    position: relative;
+    display: inline-block;
+  }
 
-.intro h1 {
-  font-size: 10rem; /* Reduced size for better fit */
-  color: var(--text-heading);
-  white-space: nowrap; /* Prevent text from wrapping to the next line */
-  border-right: 5px solid var(--border-accent);
-  width: 100%;
-  overflow: hidden;
-  animation: 
-    typing 3.5s,
-    cursor 0.5s step-end infinite alternate;
-  animation-fill-mode: forwards;
-}
-
-.intro p {
-  font-size: 2rem; /* Reduced text size for better fit */
-  margin: 1rem 0;
-  color: var(--text-secondary);
-  text-align: center;
-}
-
-/* Footer */
-.footer {
-  flex: 0 0 auto; /* Prevent footer from growing */
-  text-align: center;
-  padding: 0.5rem 0; /* Reduce padding to save space */
-  font-size: 1.1rem; /* Slightly smaller footer text */
-  color: var(--text-secondary);
-}
-
-/* Animations */
 @keyframes cursor {
-  50% {
-    border-color: transparent;
+    50% {
+      border-color: transparent;
+    }
   }
-}
-
+  
 @keyframes typing {
-  from {
-    width: 0;
+    from {
+      width: 0;
+    }
   }
-}
-
+  
 .cursor-disappear {
-  animation: none !important; /* Stops all animations */
-  border-right: none !important; /* Removes the cursor */
+    animation: none !important;
+    border-right: none !important;
+  }
+
+.home-sec p {
+    font-size: 1.5rem;
+    color: var(--text-secondary);
 }
 
-/* About Section */
-.about-section {
-  padding-left: 0rem;
-  padding-right: 0rem;
-  margin-left: -2rem;
-  text-align: center;
-  color: var(--text-primary); /* Use global color variable */
+.socials {
+    display: flex; /* Use Flexbox */
+    justify-content: center; /* Center horizontally */
+  }
+
+.socials a {
+    text-decoration: none;
+}
+  
+.socials a img {
+    width: 64px; /* Adjust size of icons */
+    height: 64px;
+    transition: filter 0.3s ease, transform 0.3s ease; /* Smooth transitions */
 }
 
-.about-section h2 {
-  margin-top: 0; /* Center vertically */
-  position: relative;
-  font-size: 5rem;
-  margin-bottom: 2rem;
+body.dark .socials img {
+    filter: invert(1) hue-rotate(180deg); /* Invert colors for dark mode */
+  }
+
+.social-hidden {
+    opacity: 0;
+    transition: all 1s ease;
+    transform: translateY(-100%); /* Starts above the screen */
 }
 
-.about-section p {
-  font-size: 2rem;
-  line-height: 1.8;
-  margin-bottom: 1.5rem;
-  margin-left: -2rem;
-  text-align: left;
-  width: 75%;
-  color: var(--text-secondary)
+.social-show {
+    opacity: 1;
+    transform: translateY(0); /* Moves to its original position */
 }
 
-.about-list {
-  list-style-type: disc; /* Adds standard bullet points */
-  padding-left: 0rem; /* Indent the list slightly */
-  text-align: left; /* Align list items to the left */
-  margin: 2.5rem; /* Center the list with vertical spacing */
-  max-width: 800px; /* Restrict the width for better readability */
+.soc-logo:nth-child(2) {
+    transition-delay: 100ms;
 }
 
-.about-list li {
-  font-size: 2em; /* Adjust text size */
-  line-height: 1.8; /* Add spacing between lines */
-  margin-bottom: 1.5rem; /* Add space between list items */
-  text-align: left;
-  color: var(--text-secondary); /* Match text color with the theme */
+.soc-logo:nth-child(3) {
+    transition-delay: 300ms;
 }
 
-
-/* Active Navbar Link */
-.nav-links a.active {
-  color: var(--border-accent); /* Highlight the active link */
-  font-weight: bold;
+.soc-logo:nth-child(4) {
+    transition-delay: 500ms;
 }
+.about-sec {
+    min-height: 100vh;
+    max-width: 100%;
+    border: 1px solid transparent;; 
+    /* Add a border to see the section's boundaries */
+}
+
+.about-sec h1 {
+    /* padding: 0 5%;  */
+    margin-left: 4%; /* Adjust as needed */
+    margin-right: 4%; 
+    padding-top: 3rem;
+    font-size: 4rem;
+    text-align: center;
+
+}
+
+.about-sec ul {
+    margin-top: -1.25rem;
+    font-size: 1.5rem;
+    color: var(--text-secondary);
+    line-height: 3;
+}
+
+.container {
+    display: grid;
+    place-items: center; /* Center content horizontally and vertically */
+    align-content: center;
+}
+
+.hidden {
+    opacity: 0;
+    transition: all 1s;
+    transform: translateX(-100%);
+    filter: blur(3px)
+}
+
+.show {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateX(0);
+}
+
+.projects-sec {
+    min-height: 100vh;
+    padding-top: 100px;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 3rem;
+}
+
+.projects-sec h1 {
+    position: relative;
+    top: -178px; 
+    font-size: 4rem;
+    flex: grid;
+    text-align: center;
+}
+
+.proj-hidden {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 1s ease;
+  }
+  
+.proj-show {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+.project {
+    margin-top: -14rem;
+    display: flex;
+    align-items: center;
+    gap: 2rem; /* Add space between content and image */
+    margin-bottom: 16rem; /* Add spacing between projects */
+    margin-left: 8%; /* Adjust as needed */
+    margin-right: 8%; 
+  }
+  
+.project-info {
+    flex: 2; /* Take up equal space */
+}
+
+.project-info h2 {
+    font-size: 2.5rem;
+    margin-bottom: -1rem;
+    color: var(--text-primary);
+}
+
+.project-info p {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    color: var(--text-secondary); /* Slightly lighter text for description */
+}
+
+.tech-stack p {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    color: #a1a7ab; /* Slightly lighter text for description */
+}
+  
+.view-button {
+    display: inline-block;
+    padding: 0.5rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--text-primary);
+    /* background-color: var(--bg-secondary); */
+    background-color: #5A9ECF;
+    border-radius: 20px; /* Rounded button */
+    text-decoration: none;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+.view-button:hover {
+    /* background-color: var(--border-accent); Highlight on hover */
+    background-color :#025b9c;
+    color: white; /* Change text color on hover */
+  }
+  
+.project-image {
+    flex: 1; /* Take up equal space */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+.project-image img {
+    max-width: 100%; /* Ensure image doesn't overflow */
+    border-radius: 10px; /* Optional: Rounded edges */
+  }
+
+.resume-sec {
+    scroll-margin-top: 1px; 
+    margin-top: -2rem; /* Aligns the section closer to the top */
+    padding-top: 0; /* Adds controlled padding inside the section */
+    display: flex;
+    flex-direction: column;
+}
+
+.resume-sec h1 {
+    text-align: center;
+    font-size: 4rem;
+}
+
+.resume-sec p {
+    padding-top: -50px;
+    padding-left: 5%;
+    padding-right: 5%;
+    margin-bottom: -2rem;
+    text-align: left;
+    font-size: 2.5rem;
+}
+
+.resume-sec ul {
+    padding-top: -50px;
+    padding-left: 5%;
+    padding-right: 5%;
+    text-align: left;
+    font-size: 1.5rem;
+    color: var(--text-secondary);
+}
+
+.download {
+    display: flex; /* Use Flexbox */
+    justify-content: center; /* Center horizontally */
+  }
+
+.download a{
+    text-decoration: none;
+}
+
+.download-button {
+    display: inline-flex; /* Align text and icon side-by-side */
+    align-items: center; /* Vertically align text and icon */
+    gap: 0.5rem; /* Space between text and icon */
+    padding: 0.8rem 1.5rem;
+    font-size: 1.5rem;
+    color: var(--text-primary);
+    text-decoration: none;
+    /* background-color: #6C63FF;  */
+    background-color: #5A9ECF;
+    border-radius: 8px;
+    border: none;
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transitions */
+    margin-top: -2rem;
+  }
+  
+  .download-button:hover {
+    /* background-color: #574bdb; Darker purple on hover */
+    background-color: #025b9c;
+    transform: translateY(-2px); /* Slight lift on hover */
+    text-decoration: none; /* Remove underline on hover */
+  }
+  
+  .download-button:active {
+    transform: translateY(0); /* Reset on click */
+  }
+  
+  .download-button img {
+    fill: currentColor; /* Match the SVG color to the text */
+    transition: transform 0.2s ease; /* Smooth transition for hover effect */
+  }
+  
+  .download-button:hover img {
+    transform: translateY(2px); /* Slight downward movement for icon on hover */
+  }
+
+body.dark .download-button img {
+    filter: invert(1) hue-rotate(180deg); /* Invert colors for dark mode */
+  }
+
+  .footer {
+    background-color: var(--bg-primary); /* Use your theme's background color */
+    color: var(--text-secondary); /* Use your theme's secondary text color */
+    text-align: center;
+    padding: 1rem 0; /* Add vertical padding for spacing */
+    font-size: 1rem; /* Adjust text size */
+    position: relative;
+  }
+  
+  .footer hr {
+    width: 90%; /* Adjust the width of the horizontal line */
+    border: none;
+    border-top: 1.5px solid var(--border-accent); /* Add a subtle line */
+    margin: 0 auto 1rem auto; /* Center the line with spacing below */
+  }
+  
+  .footer p {
+    margin: 0; /* Remove default margin */
+    font-family: 'Satoshi-Variable', sans-serif; /* Match your site's font */
+    font-weight: 500; /* Normal font weight */
+  }
