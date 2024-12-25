@@ -12,7 +12,8 @@ section {
 :root {
     --text-primary: #1e1e1e;
     /* --text-secondary: #444444; */
-    --text-secondary: #8d8f94;
+    /* --text-secondary: #8d8f94; */
+    --text-secondary: #474747;
     --text-third: #a1a7ab;
     --bg-primary: #ffffff;
     --bg-secondary: #f0f0f0;
@@ -34,13 +35,16 @@ body.dark {
   
 
 body {
+    margin: 0 auto; 
     display: flex;
     flex-direction: column;
     min-height: 100vh;
     font-family: 'Satoshi-Variable', sans-serif;
+    font-weight: 300;
     background-color: var(--bg-primary);
     color: var(--text-primary);
     transition: background-color 0.5s ease, color 0.5s ease;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
 /* Navbar */
@@ -66,9 +70,7 @@ body {
     list-style: none;
     display: flex;
     gap: 1.5rem;
-    margin: 0; /* Remove default margin */
-    padding: 0; /* Remove default padding */
-    z-index: 10;
+    z-index: 1000;
 }
 
 .navbar-menu a {
@@ -103,11 +105,10 @@ body {
 
 .navbar-logo a:active {
     color: #5A9ECF;
-    font-family: 'Satoshi-Bold', sans-serif;
 }
 
 #theme-toggle {
-    padding: 0.5rem 1rem;
+    padding: 0.25rem 0.75rem;
     font-size: 1rem;
     background-color: transparent;
     border: 2px solid var(--link-color);
@@ -121,17 +122,30 @@ body {
     color: #ffffff;
 }
 
+
+.home-sec,
+.about-sec,
+.projects-sec,
+.resume-sec {
+    scroll-margin-top: 95px; /* Adjust for navbar height */
+    margin: 5rem 0; /* Uniform space between sections */
+    padding-bottom: 3rem; /* Keep bottom padding as it is */
+}
+
 .home-sec {
+    /* border: 2px solid red; */
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
     text-align: center;
-    margin-bottom: 10rem;
+    margin-bottom: 25vh; /* originall 6 rem*/
 }
 
 .home-sec h1 {
-    margin-top: 14rem;
+    font-family: 'Satoshi-Variable', sans-serif;
+    font-weight: 500;
+    margin-top: 12rem;
     font-size: 9rem;
     color: var(--text-heading);
     white-space: nowrap; /* Prevent text wrapping */
@@ -142,6 +156,7 @@ body {
     animation-fill-mode: forwards;
     font-size: 9rem;
     color: var(--text-heading);
+    margin-bottom: 8vh; /* originall 6 rem*/
 }
 
 .typewriter-container {
@@ -213,30 +228,33 @@ body.dark .socials img {
     transition-delay: 500ms;
 }
 .about-sec {
+    /* border: 2px solid red; */
     min-height: 100vh;
     max-width: 100%;
-    border: 1px solid transparent;; 
+    /* border: 1px solid transparent; */
     /* Add a border to see the section's boundaries */
 }
 
 .about-sec h1 {
     /* padding: 0 5%;  */
-    margin-left: 4%; /* Adjust as needed */
-    margin-right: 4%; 
-    padding-top: 3rem;
+    padding-top: 2rem;
+    margin-left: 6%; /* Adjust as needed */
+    margin-right: 6%; 
     font-size: 4rem;
     text-align: center;
-
 }
 
 .about-sec ul {
-    margin-top: -1.25rem;
+    padding-top: -5rem;
+    list-style-type: circle;
     font-size: 1.5rem;
     color: var(--text-secondary);
     line-height: 3;
+    width: 750px;
 }
 
 .container {
+    /* padding-top: -10rem; */
     display: grid;
     place-items: center; /* Center content horizontally and vertically */
     align-content: center;
@@ -256,16 +274,17 @@ body.dark .socials img {
 }
 
 .projects-sec {
+    /* border: 2px solid red; */
+    /* scroll-margin-top: 80px; */
     min-height: 100vh;
-    padding-top: 100px;
     display: flex;
     flex-direction: column;
-    padding-bottom: 3rem;
+    padding-bottom: -8rem;
+    margin-bottom: -25px;
 }
 
 .projects-sec h1 {
     position: relative;
-    top: -178px; 
     font-size: 4rem;
     flex: grid;
     text-align: center;
@@ -283,11 +302,11 @@ body.dark .socials img {
   }
 
 .project {
-    margin-top: -14rem;
+    margin-top: 1px;
     display: flex;
     align-items: center;
     gap: 2rem; /* Add space between content and image */
-    margin-bottom: 16rem; /* Add spacing between projects */
+    margin-bottom: 10rem; /* Add spacing between projects */
     margin-left: 8%; /* Adjust as needed */
     margin-right: 8%; 
   }
@@ -304,13 +323,14 @@ body.dark .socials img {
 
 .project-info p {
     font-size: 1.5rem;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
     color: var(--text-secondary); /* Slightly lighter text for description */
 }
 
 .tech-stack p {
+    margin-top: -5px;
     font-size: 1.5rem;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
     color: #a1a7ab; /* Slightly lighter text for description */
 }
   
@@ -320,9 +340,9 @@ body.dark .socials img {
     font-size: 1rem;
     font-weight: 500;
     color: var(--text-primary);
-    /* background-color: var(--bg-secondary); */
-    background-color: #5A9ECF;
-    border-radius: 20px; /* Rounded button */
+    background-color: var(--bg-secondary); 
+    background-color: #5A9ECF; 
+    border-radius: 20px; 
     text-decoration: none;
     transition: background-color 0.3s ease, color 0.3s ease;
   }
@@ -342,15 +362,13 @@ body.dark .socials img {
   
 .project-image img {
     max-width: 100%; /* Ensure image doesn't overflow */
-    border-radius: 10px; /* Optional: Rounded edges */
   }
 
 .resume-sec {
-    scroll-margin-top: 1px; 
-    margin-top: -2rem; /* Aligns the section closer to the top */
-    padding-top: 0; /* Adds controlled padding inside the section */
     display: flex;
     flex-direction: column;
+    min-height: 100vh;
+    /* margin-top: -1px; */
 }
 
 .resume-sec h1 {
@@ -358,48 +376,59 @@ body.dark .socials img {
     font-size: 4rem;
 }
 
-.resume-sec p {
+.resume-sec h2 {
     padding-top: -50px;
-    padding-left: 5%;
-    padding-right: 5%;
-    margin-bottom: -2rem;
+    margin-left: 8%; /* Adjust as needed */
+    margin-right: 8%; 
+    margin-bottom: -1rem;
     text-align: left;
     font-size: 2.5rem;
 }
 
 .resume-sec ul {
     padding-top: -50px;
-    padding-left: 5%;
-    padding-right: 5%;
+    margin-left: 8%; /* Adjust as needed */
+    margin-right: 8%; 
     text-align: left;
     font-size: 1.5rem;
     color: var(--text-secondary);
 }
 
-.download {
-    display: flex; /* Use Flexbox */
-    justify-content: center; /* Center horizontally */
+.title-container {
+    display: flex; /* Arrange items in a row */
+    align-items: center; /* Vertically align the button with the title */
+    justify-content: center; 
+    gap: 1.5rem; /* Add spacing between the title and button */
+    margin-bottom: 1.5rem; /* Add space below the title-container */
   }
-
-.download a{
-    text-decoration: none;
-}
-
-.download-button {
-    display: inline-flex; /* Align text and icon side-by-side */
-    align-items: center; /* Vertically align text and icon */
-    gap: 0.5rem; /* Space between text and icon */
+  
+  h1 {
+    margin: 0; /* Remove default margin for proper alignment */
+    font-size: 2.5rem; /* Adjust font size as needed */
+  }
+  
+  .download {
+    margin: 0; /* Remove unnecessary margins */
+  }
+  
+  .download-button {
+    display: flex; /* Keep button styles intact */
+    align-items: center;
+    justify-content: center;
     padding: 0.8rem 1.5rem;
-    font-size: 1.5rem;
-    color: var(--text-primary);
-    text-decoration: none;
-    /* background-color: #6C63FF;  */
     background-color: #5A9ECF;
-    border-radius: 8px;
     border: none;
-    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transitions */
-    margin-top: -2rem;
+    border-radius: 25px; 
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
   }
+  
+  .download-button img {
+    width: 32px; /* Ensure consistent icon size */
+    height: 32px;
+    transition: transform 0.2s ease;
+  }
+  
   
   .download-button:hover {
     /* background-color: #574bdb; Darker purple on hover */
@@ -421,28 +450,40 @@ body.dark .socials img {
     transform: translateY(2px); /* Slight downward movement for icon on hover */
   }
 
-body.dark .download-button img {
+   body.dark .download-button img {
     filter: invert(1) hue-rotate(180deg); /* Invert colors for dark mode */
   }
 
   .footer {
+    margin-top: -10rem;
     background-color: var(--bg-primary); /* Use your theme's background color */
     color: var(--text-secondary); /* Use your theme's secondary text color */
     text-align: center;
-    padding: 1rem 0; /* Add vertical padding for spacing */
+    padding: 1rem 0; 
     font-size: 1rem; /* Adjust text size */
     position: relative;
   }
   
   .footer hr {
-    width: 90%; /* Adjust the width of the horizontal line */
+    width: 84%; /* Adjust the width of the horizontal line */
     border: none;
-    border-top: 1.5px solid var(--border-accent); /* Add a subtle line */
+    border-top: 1px solid var(--border-accent); /* Add a subtle line */
     margin: 0 auto 1rem auto; /* Center the line with spacing below */
   }
   
   .footer p {
     margin: 0; /* Remove default margin */
     font-family: 'Satoshi-Variable', sans-serif; /* Match your site's font */
-    font-weight: 500; /* Normal font weight */
+    font-weight: 300; /* Normal font weight */
+  }
+
+  .separator {
+    height: 1px; /* Line thickness */
+    background-color: var(--border-accent); /* Line color */
+    margin: 0 auto;
+    width: 84%; /* Full width of the page */
+  }
+
+  .blue-word {
+    color: #5A9ECF; /* Change the color of the word to blue */
   }
