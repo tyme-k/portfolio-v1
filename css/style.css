@@ -25,11 +25,11 @@ body.dark {
     /* Dark Mode Colors */
     --text-primary: #ffffff;
     /* --text-secondary: #bbbbbb; */
-    --text-secondary: #8d8f94;
+    --text-secondary: #ecedf1;
     --text-third: #a1a7ab;
-    --bg-primary: #161513;
+    --bg-primary: #212121;
     --bg-secondary: #242426;
-    --bg-transparent: #161513;
+    --bg-transparent:  rgba(33, 33, 33, 0.8);
     --border-accent: #ffffff;
   }
   
@@ -246,6 +246,7 @@ body.dark .socials img {
 
 .about-sec ul {
     padding-top: -5rem;
+    padding-bottom: -5rem;
     list-style-type: circle;
     font-size: 1.5rem;
     color: var(--text-secondary);
@@ -367,8 +368,7 @@ body.dark .socials img {
 .resume-sec {
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
-    /* margin-top: -1px; */
+    min-height: 80vh;
 }
 
 .resume-sec h1 {
@@ -386,10 +386,9 @@ body.dark .socials img {
 }
 
 .resume-sec ul {
-    padding-top: -50px;
     margin-left: 8%; /* Adjust as needed */
     margin-right: 8%; 
-    text-align: left;
+    text-align: center;
     font-size: 1.5rem;
     color: var(--text-secondary);
 }
@@ -406,53 +405,7 @@ body.dark .socials img {
     margin: 0; /* Remove default margin for proper alignment */
     font-size: 2.5rem; /* Adjust font size as needed */
   }
-  
-  .download {
-    margin: 0; /* Remove unnecessary margins */
-  }
-  
-  .download-button {
-    display: flex; /* Keep button styles intact */
-    align-items: center;
-    justify-content: center;
-    padding: 0.8rem 1.5rem;
-    background-color: #5A9ECF;
-    border: none;
-    border-radius: 25px; 
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-  }
-  
-  .download-button img {
-    width: 32px; /* Ensure consistent icon size */
-    height: 32px;
-    transition: transform 0.2s ease;
-  }
-  
-  
-  .download-button:hover {
-    /* background-color: #574bdb; Darker purple on hover */
-    background-color: #025b9c;
-    transform: translateY(-2px); /* Slight lift on hover */
-    text-decoration: none; /* Remove underline on hover */
-  }
-  
-  .download-button:active {
-    transform: translateY(0); /* Reset on click */
-  }
-  
-  .download-button img {
-    fill: currentColor; /* Match the SVG color to the text */
-    transition: transform 0.2s ease; /* Smooth transition for hover effect */
-  }
-  
-  .download-button:hover img {
-    transform: translateY(2px); /* Slight downward movement for icon on hover */
-  }
 
-   body.dark .download-button img {
-    filter: invert(1) hue-rotate(180deg); /* Invert colors for dark mode */
-  }
 
   .footer {
     margin-top: -10rem;
@@ -487,3 +440,42 @@ body.dark .socials img {
   .blue-word {
     color: #5A9ECF; /* Change the color of the word to blue */
   }
+
+  /* .test-word {
+    color: #4A90E2;
+  } */
+.centered-list {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;  
+  flex-direction: column;
+  margin-top: 2rem;
+}
+/* List styling stays the same */
+.centered-list ul {
+  list-style-type: none;
+  line-height: 3rem;
+  white-space: nowrap; 
+  padding-bottom: 11rem;
+}
+
+.centered-list.hidden {
+  opacity: 0;
+  transform: scale(0.95);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.centered-list.show {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.black-link {
+  color: #5A9ECF;
+  text-decoration: none;
+}
+
+.black-link:hover {
+  text-decoration: underline;
+}
