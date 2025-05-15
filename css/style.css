@@ -479,76 +479,61 @@ body.dark .socials img {
 .black-link:hover {
   text-decoration: underline;
 }
-
-@media screen and (max-width: 768px) {
-
-  /* Fix navbar stacking and spacing */
+@media (max-width: 768px) {
+  /* Navbar layout fix */
   .navbar {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
+    gap: 0.5rem;
     padding: 1rem;
-    font-size: 1rem;
-  }
-
-  .navbar-menu {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 1rem;
-    padding-left: 0;
-    margin-top: 0.5rem;
+    flex-wrap: nowrap; /* Prevent unexpected wrapping */
   }
 
   .navbar-logo {
-    font-size: 1.2rem;
     margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+    text-align: center;
+  }
+
+  .navbar-menu {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    text-align: center;
   }
 
   #theme-toggle {
     margin-top: 0.5rem;
-    align-self: flex-start;
   }
 
-  /* Resize hero text */
+  /* Home section font resizing */
   .home-sec h1 {
-    font-size: 3rem;
+    font-size: 3.5rem;
+    margin-top: 8rem;
     white-space: normal;
-    text-align: center;
-    margin-top: 6rem;
+    border: none;
+    animation: none;
   }
 
   .home-sec p {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     padding: 0 1rem;
   }
 
-  /* Center and resize icons */
-  .socials img {
-    width: 48px;
-    height: 48px;
-  }
-
-  /* About section adjustments */
+  /* About section list layout */
   .about-sec ul {
-    width: auto;
-    padding: 0 1.5rem;
-    font-size: 1.1rem;
-    line-height: 2rem;
+    width: 90%;
+    font-size: 1.2rem;
+    line-height: 2.2rem;
+    padding: 0;
   }
 
-  .about-sec h1 {
-    font-size: 2.5rem;
-  }
-
-  /* Projects section spacing */
-  .projects-sec h1 {
-    font-size: 2.5rem;
-  }
-
+  /* Projects layout cleanup */
   .project {
     flex-direction: column;
+    align-items: center;
     text-align: center;
-    margin-left: 1.5rem;
-    margin-right: 1.5rem;
+    margin: 4rem 1rem;
   }
 
   .project-info h2 {
@@ -560,21 +545,23 @@ body.dark .socials img {
     font-size: 1.2rem;
   }
 
-  /* Resume/Experience section fix */
-  .resume-sec h1 {
-    font-size: 2.5rem;
+  .view-button {
+    font-size: 1rem;
+    padding: 0.4rem 1.2rem;
+    border-radius: 1rem;
   }
 
+  /* Experience section list */
   .centered-list ul {
     font-size: 1.2rem;
-    padding: 0 1rem;
     line-height: 2.2rem;
-    white-space: normal;
     text-align: center;
+    white-space: normal;
+    padding: 0 1rem;
   }
 
-  /* Prevent horizontal scroll */
-  body {
-    overflow-x: hidden;
+  /* Footer text size */
+  .footer p {
+    font-size: 0.9rem;
   }
 }
