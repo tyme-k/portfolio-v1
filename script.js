@@ -133,10 +133,9 @@ themeToggle.addEventListener('click', () => {
   updateIcons(newTheme);
 });
 
-// Hamburger menu toggle
-const hamburgerBtn = document.getElementById('hamburger-btn');
+const hamburger = document.getElementById('hamburger');
 const mobileMenu = document.getElementById('mobile-menu');
 
-hamburgerBtn.addEventListener('click', () => {
-  mobileMenu.classList.toggle('show-menu');
+hamburger.addEventListener('click', () => {
+  mobileMenu.classList.toggle('open');
 });

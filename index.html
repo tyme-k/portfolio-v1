@@ -1,22 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Tyme Kumthampinij</title>
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/satoshi.css">
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/satoshi.css" />
   <script defer src="script.js"></script>
 </head>
 <body>  
   <header class="navbar">
     <a href="#home" class="navbar-logo">tyme kumthampinij</a>
+    
+    <!-- Hamburger button (shown only on mobile) -->
+    <button class="hamburger" id="hamburger" aria-label="Toggle navigation">☰</button>
 
-    <!-- Hamburger Icon -->
-    <button class="hamburger" id="hamburger-btn" aria-label="Toggle menu">☰</button>
-
-    <!-- Collapsible Nav Menu -->
-    <nav id="mobile-menu" class="navbar-menu">
+    <!-- Nav menu -->
+    <ul class="navbar-menu" id="mobile-menu">
       <li><a href="#home" class="nav-link">home</a></li>
       <li><a href="#about" class="nav-link">about</a></li>
       <li><a href="#projects" class="nav-link">projects</a></li>
@@ -24,14 +24,18 @@
       <li>
         <div class="theme">
           <button id="theme-toggle" aria-label="Toggle Light/Dark Mode">
-            <span id="dark-mode-icon"><img src="icons/moon.svg" alt="moon" width="20" height="20"></span>
-            <span id="light-mode-icon"><img src="icons/sun.svg" alt="sun" width="20" height="20"></span>
+            <span id="dark-mode-icon">
+              <img src="icons/moon.svg" alt="moon" width="20" height="20" />
+            </span>
+            <span id="light-mode-icon">
+              <img src="icons/sun.svg" alt="sun" width="20" height="20" />
+            </span>
           </button>
         </div>
       </li>
-    </nav>
+    </ul>
   </header>
-
+  
   <main>
     <section id="home" class="home-sec">
       <div class="typewriter-container">
@@ -39,19 +43,19 @@
       </div>
       <p>Computer Science at the University of Michigan</p>
       <div class="socials">
-        <div class="soc-logo social-hidden"> 
+        <div class="soc-logo social-hidden">
           <a href="https://www.linkedin.com/in/tymekumthampinij/" target="_blank" aria-label="LinkedIn">
-            <img src="icons/linkedin-brands-solid.svg" alt="LinkedIn" width="32" height="32">
+            <img src="icons/linkedin-brands-solid.svg" alt="LinkedIn" width="32" height="32" />
           </a>
         </div>
         <div class="soc-logo social-hidden">
           <a href="https://github.com/tyme-k" target="_blank" aria-label="GitHub">
-            <img src="icons/square-github-brands-solid.svg" alt="GitHub" width="32" height="32">
+            <img src="icons/square-github-brands-solid.svg" alt="GitHub" width="32" height="32" />
           </a>
         </div>
         <div class="soc-logo social-hidden">
           <a href="mailto:tyme@umich.edu" target="_blank" aria-label="Email">
-            <img src="icons/square-envelope-solid.svg" alt="Email" width="32" height="32">
+            <img src="icons/square-envelope-solid.svg" alt="Email" width="32" height="32" />
           </a>
         </div>
       </div>
@@ -64,9 +68,9 @@
       <div class="container">
         <ul class="about-list hidden">
           <li>Computer Science student at the <span style="color: #DAA520">University of Michigan</span> - <span class="blue-word">Go Blue!</span></li>
-          <li>Software Engineer interested in systems, and backend development. ⚙️ </li>
-          <li>Enjoy building cool software and apps. 🧠 </li> 
-          <li>Based in New Jersey, Michigan, and Thailand. 🌍 </li>
+          <li>Software Engineer interested in systems, and backend development. ⚙️</li>
+          <li>Enjoy building cool software and apps. 🧠</li> 
+          <li>Based in New Jersey, Michigan, and Thailand. 🌍</li>
           <li>Hobbies include (but not limited to) calisthenics, cooking, coffee, tea. ☕</li>
           <li>Love food, but deathly allergic to dairy and nuts (rip). 💀</li>
         </ul>
@@ -81,9 +85,6 @@
         <div class="project-info">
           <h2>Building...</h2>
           <p>Coming Soon.</p>
-          <div class="tech-stack">
-            <p></p>
-          </div>
           <a href="" target="_blank" class="view-button">View</a>
         </div>
       </div>
@@ -91,9 +92,6 @@
         <div class="project-info">
           <h2>Building...</h2>
           <p>Coming Soon.</p>
-          <div class="tech-stack">
-            <p></p>
-          </div>
           <a href="" target="_blank" class="view-button">View</a>
         </div>
       </div>
@@ -107,8 +105,8 @@
       </div>
       <div class="centered-list scale-in hidden">
         <ul>
-          <li>Software Engineer Intern at <a href="https://www.nutanix.com/what-we-do" class="black-link"> <strong>Nutanix</strong> </a> - Summer 2025</li>
-          <li>Software Engineer Intern at <a href="https://bumpups.com/" class="black-link"> <strong>Bumpups</strong> </a> - Winter 2025</li>
+          <li>Software Engineer Intern at <a href="https://www.nutanix.com/what-we-do" class="black-link"><strong>Nutanix</strong></a> - Summer 2025</li>
+          <li>Software Engineer Intern at <a href="https://bumpups.com/" class="black-link"><strong>Bumpups</strong></a> - Winter 2025</li>
         </ul>
       </div>
     </section>
