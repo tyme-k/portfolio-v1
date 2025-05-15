@@ -479,27 +479,39 @@ body.dark .socials img {
 .black-link:hover {
   text-decoration: underline;
 }
-
-/* MOBILE RESPONSIVENESS FIX */
 @media (max-width: 768px) {
 
   /* 🔧 NAVBAR */
   .navbar {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
+    gap: 0.5rem;
     padding: 1rem;
     font-size: 1rem;
   }
 
+  .navbar-logo {
+    font-size: 1rem;
+    text-align: center;
+  }
+
   .navbar-menu {
     flex-wrap: wrap;
-    justify-content: flex-start;
+    justify-content: center;
     gap: 1rem;
   }
 
-  .navbar-logo {
-    font-size: 1.25rem;
-    margin-bottom: 0.5rem;
+  #theme-toggle {
+    position: static;
+    margin-top: 0.5rem;
+  }
+
+  /* 🧱 SECTION SPACING (Prevent overlap with navbar) */
+  .home-sec,
+  .about-sec,
+  .projects-sec,
+  .resume-sec {
+    margin-top: 7rem;
   }
 
   /* 🔠 HEADINGS */
@@ -511,37 +523,34 @@ body.dark .socials img {
     white-space: normal;
     border: none;
     animation: none;
+    margin-top: 1rem;
+    text-align: center;
   }
 
-  .home-sec h1 {
-    margin-top: 6rem;
-    margin-bottom: 3rem;
-  }
-
-  /* 📝 ABOUT & RESUME LISTS */
+  /* 📝 TEXT + LISTS */
+  .home-sec p,
+  .project-info p,
+  .tech-stack p,
   .about-sec ul,
   .resume-sec ul,
   .centered-list ul {
     font-size: 1.2rem;
     line-height: 2rem;
-    width: 90%;
-    padding-left: 1rem;
-    white-space: normal;
-    padding-bottom: 3rem;
-  }
-
-  /* 🧠 OTHER TEXT */
-  .home-sec p,
-  .project-info p,
-  .tech-stack p {
-    font-size: 1.2rem;
     padding: 0 1rem;
+    white-space: normal;
+    width: 90%;
     text-align: center;
   }
 
-  /* 🧱 LAYOUT ADJUSTMENTS */
+  /* 📄 CENTERED LIST */
+  .centered-list {
+    padding: 0 1rem;
+  }
+
+  /* 📦 PROJECTS STACK VERTICALLY */
   .project {
     flex-direction: column;
+    align-items: center;
     margin-bottom: 4rem;
   }
 
@@ -554,19 +563,9 @@ body.dark .socials img {
     width: 90%;
   }
 
-  /* 👟 FOOTER */
+  /* 👣 FOOTER */
   .footer {
     font-size: 0.9rem;
     padding: 2rem 1rem;
   }
-
-  /* 🌀 FIX overflow issues from nowrap */
-  .centered-list ul {
-    white-space: normal;
-  }
-
-  .centered-list {
-    padding: 0 1rem;
-  }
-
 }
