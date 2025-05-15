@@ -479,93 +479,102 @@ body.dark .socials img {
 .black-link:hover {
   text-decoration: underline;
 }
-@media (max-width: 768px) {
 
-  /* 🔧 NAVBAR */
+@media screen and (max-width: 768px) {
+
+  /* Fix navbar stacking and spacing */
   .navbar {
     flex-direction: column;
-    align-items: center;
-    gap: 0.5rem;
+    align-items: flex-start;
     padding: 1rem;
     font-size: 1rem;
   }
 
-  .navbar-logo {
-    font-size: 1rem;
-    text-align: center;
-  }
-
   .navbar-menu {
-    flex-wrap: wrap;
-    justify-content: center;
+    flex-direction: column;
+    align-items: flex-start;
     gap: 1rem;
-  }
-
-  #theme-toggle {
-    position: static;
+    padding-left: 0;
     margin-top: 0.5rem;
   }
 
-  /* 🧱 SECTION SPACING (Prevent overlap with navbar) */
-  .home-sec,
-  .about-sec,
-  .projects-sec,
-  .resume-sec {
-    margin-top: 7rem;
+  .navbar-logo {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
   }
 
-  /* 🔠 HEADINGS */
-  .home-sec h1,
-  .resume-sec h1,
-  .about-sec h1,
+  #theme-toggle {
+    margin-top: 0.5rem;
+    align-self: flex-start;
+  }
+
+  /* Resize hero text */
+  .home-sec h1 {
+    font-size: 3rem;
+    white-space: normal;
+    text-align: center;
+    margin-top: 6rem;
+  }
+
+  .home-sec p {
+    font-size: 1.1rem;
+    padding: 0 1rem;
+  }
+
+  /* Center and resize icons */
+  .socials img {
+    width: 48px;
+    height: 48px;
+  }
+
+  /* About section adjustments */
+  .about-sec ul {
+    width: auto;
+    padding: 0 1.5rem;
+    font-size: 1.1rem;
+    line-height: 2rem;
+  }
+
+  .about-sec h1 {
+    font-size: 2.5rem;
+  }
+
+  /* Projects section spacing */
   .projects-sec h1 {
     font-size: 2.5rem;
-    white-space: normal;
-    border: none;
-    animation: none;
-    margin-top: 1rem;
-    text-align: center;
   }
 
-  /* 📝 TEXT + LISTS */
-  .home-sec p,
-  .project-info p,
-  .tech-stack p,
-  .about-sec ul,
-  .resume-sec ul,
-  .centered-list ul {
-    font-size: 1.2rem;
-    line-height: 2rem;
-    padding: 0 1rem;
-    white-space: normal;
-    width: 90%;
-    text-align: center;
-  }
-
-  /* 📄 CENTERED LIST */
-  .centered-list {
-    padding: 0 1rem;
-  }
-
-  /* 📦 PROJECTS STACK VERTICALLY */
   .project {
     flex-direction: column;
-    align-items: center;
-    margin-bottom: 4rem;
+    text-align: center;
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
   }
 
   .project-info h2 {
-    font-size: 1.8rem;
+    font-size: 2rem;
+  }
+
+  .project-info p,
+  .tech-stack p {
+    font-size: 1.2rem;
+  }
+
+  /* Resume/Experience section fix */
+  .resume-sec h1 {
+    font-size: 2.5rem;
+  }
+
+  .centered-list ul {
+    font-size: 1.2rem;
+    padding: 0 1rem;
+    line-height: 2.2rem;
+    white-space: normal;
     text-align: center;
   }
 
-  .project-image img {
-    width: 90%;
-  }
-
-  /* 👣 FOOTER */
-  .footer {
-    font-size: 0.9rem;
-    padding: 2rem 1rem;
+  /* Prevent horizontal scroll */
+  body {
+    overflow-x: hidden;
   }
 }
