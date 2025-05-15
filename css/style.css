@@ -479,3 +479,94 @@ body.dark .socials img {
 .black-link:hover {
   text-decoration: underline;
 }
+
+/* MOBILE RESPONSIVENESS FIX */
+@media (max-width: 768px) {
+
+  /* 🔧 NAVBAR */
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem;
+    font-size: 1rem;
+  }
+
+  .navbar-menu {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 1rem;
+  }
+
+  .navbar-logo {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+  }
+
+  /* 🔠 HEADINGS */
+  .home-sec h1,
+  .resume-sec h1,
+  .about-sec h1,
+  .projects-sec h1 {
+    font-size: 2.5rem;
+    white-space: normal;
+    border: none;
+    animation: none;
+  }
+
+  .home-sec h1 {
+    margin-top: 6rem;
+    margin-bottom: 3rem;
+  }
+
+  /* 📝 ABOUT & RESUME LISTS */
+  .about-sec ul,
+  .resume-sec ul,
+  .centered-list ul {
+    font-size: 1.2rem;
+    line-height: 2rem;
+    width: 90%;
+    padding-left: 1rem;
+    white-space: normal;
+    padding-bottom: 3rem;
+  }
+
+  /* 🧠 OTHER TEXT */
+  .home-sec p,
+  .project-info p,
+  .tech-stack p {
+    font-size: 1.2rem;
+    padding: 0 1rem;
+    text-align: center;
+  }
+
+  /* 🧱 LAYOUT ADJUSTMENTS */
+  .project {
+    flex-direction: column;
+    margin-bottom: 4rem;
+  }
+
+  .project-info h2 {
+    font-size: 1.8rem;
+    text-align: center;
+  }
+
+  .project-image img {
+    width: 90%;
+  }
+
+  /* 👟 FOOTER */
+  .footer {
+    font-size: 0.9rem;
+    padding: 2rem 1rem;
+  }
+
+  /* 🌀 FIX overflow issues from nowrap */
+  .centered-list ul {
+    white-space: normal;
+  }
+
+  .centered-list {
+    padding: 0 1rem;
+  }
+
+}
