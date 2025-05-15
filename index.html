@@ -9,25 +9,29 @@
   <script defer src="script.js"></script>
 </head>
 <body>  
-  <header class ="navbar">
+  <header class="navbar">
     <a href="#home" class="navbar-logo">tyme kumthampinij</a>
-    <nav>
-      <ul class="navbar-menu">
-        <li><a href="#home" class="nav-link"> home</a></li>
-        <li><a href="#about" class="nav-link"> about </a></li>
-        <li><a href="#projects" class="nav-link"> projects</a></li>
-        <li><a href="#experience" class="nav-link"> experience</a></li>
-        <li>
-          <div class="theme">
-            <button id="theme-toggle" aria-label="Toggle Light/Dark Mode">
-              <span id="dark-mode-icon"><img src="icons/moon.svg" alt="moon" width="20" height="20"></span>
-              <span id="light-mode-icon"><img src="icons/sun.svg" alt="sun" width="20" height="20"></span>
-            </button>
-          </div>
-        </li>
-      </ul>
+
+    <!-- Hamburger Icon -->
+    <button class="hamburger" id="hamburger-btn" aria-label="Toggle menu">☰</button>
+
+    <!-- Collapsible Nav Menu -->
+    <nav id="mobile-menu" class="navbar-menu">
+      <li><a href="#home" class="nav-link">home</a></li>
+      <li><a href="#about" class="nav-link">about</a></li>
+      <li><a href="#projects" class="nav-link">projects</a></li>
+      <li><a href="#experience" class="nav-link">experience</a></li>
+      <li>
+        <div class="theme">
+          <button id="theme-toggle" aria-label="Toggle Light/Dark Mode">
+            <span id="dark-mode-icon"><img src="icons/moon.svg" alt="moon" width="20" height="20"></span>
+            <span id="light-mode-icon"><img src="icons/sun.svg" alt="sun" width="20" height="20"></span>
+          </button>
+        </div>
+      </li>
     </nav>
   </header>
+
   <main>
     <section id="home" class="home-sec">
       <div class="typewriter-container">
@@ -52,7 +56,9 @@
         </div>
       </div>
     </section>
+
     <div class="separator"></div>
+
     <section id="about" class="about-sec">
       <h1>About Me</h1>
       <div class="container">
@@ -63,9 +69,12 @@
           <li>Based in New Jersey, Michigan, and Thailand. 🌍 </li>
           <li>Hobbies include (but not limited to) calisthenics, cooking, coffee, tea. ☕</li>
           <li>Love food, but deathly allergic to dairy and nuts (rip). 💀</li>
+        </ul>
       </div>
     </section>
+
     <div class="separator"></div>
+
     <section id="projects" class="projects-sec">
       <h1>Projects</h1>
       <div class="project proj-hidden">
@@ -77,9 +86,6 @@
           </div>
           <a href="" target="_blank" class="view-button">View</a>
         </div>
-        <!-- <div class="project-image">
-          <img src="your-image.jpg" alt="Project preview">
-        </div> -->
       </div>
       <div class="project proj-hidden">
         <div class="project-info">
@@ -90,26 +96,27 @@
           </div>
           <a href="" target="_blank" class="view-button">View</a>
         </div>
-        <!-- <div class="project-image">
-          <img src="your-image.jpg" alt="Project preview">
-        </div> -->
       </div>
     </section>
+
     <div class="separator"></div>
+
     <section id="experience" class="resume-sec">
       <div class="title-container">
         <h1>Experience</h1>
       </div>
       <div class="centered-list scale-in hidden">
-      <ul>
-        <li>Software Engineer Intern at <a href="https://www.nutanix.com/what-we-do" class="black-link"> <strong>Nutanix</strong> </a> - Summer 2025</li>
-        <li>Software Engineer Intern at <a href="https://bumpups.com/" class="black-link">  <strong>Bumpups</strong> </a> - Winter 2025</li>
-      </ul>
-    </div>
+        <ul>
+          <li>Software Engineer Intern at <a href="https://www.nutanix.com/what-we-do" class="black-link"> <strong>Nutanix</strong> </a> - Summer 2025</li>
+          <li>Software Engineer Intern at <a href="https://bumpups.com/" class="black-link"> <strong>Bumpups</strong> </a> - Winter 2025</li>
+        </ul>
+      </div>
     </section>
+
     <footer class="footer">
       <hr />
       <p>Code and Design by Tyme Kumthampinij</p>
     </footer>
   </main>
 </body>
+</html>
